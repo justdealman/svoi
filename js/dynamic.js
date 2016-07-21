@@ -107,4 +107,34 @@
 		e.preventDefault();
 		$(this).parent().parent().toggleClass('active');
 	});
+	$('.search-p .filter').on('click', function() {
+		if ( $('.filter-opened').is(':hidden') ) {
+			$('.filter-opened').css({
+				'top': $(this).parent().offset().top+$(this).parent().outerHeight()+'px'
+			}).stop().slideDown(200);
+			$('.search-result').hide();
+			$('.search-p .user input[type="text"]').removeClass('found');
+		} else {
+			$('.filter-opened').stop().slideUp(200);
+		}
+	});
+	$('html, body').on('click', function() {
+		$('.filter-opened').stop().slideUp(200);
+		$('.search-result').stop().slideUp(200);
+		$('.search-p .user input[type="text"]').removeClass('found');
+	});
+	$('.filter-opened, .search-p .filter, .search-p .user input[type="text"], .search-result').click('click', function(e) {
+		e.stopPropagation();
+	});
+	$('.search-p .user input[type="text"]').on('keyup', function() {
+		if ( $(this).val() ) {
+			$('.search-result').stop().slideDown(200);
+			$('.search-result .scroll').jScrollPane();
+			$(this).addClass('found');
+			$('.filter-opened').hide();
+		} else {
+			$('.search-result').stop().slideUp(200);
+			$(this).removeClass('found');
+		}
+	});
 });
