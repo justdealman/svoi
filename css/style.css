@@ -2255,8 +2255,10 @@ h1 {
 .catalog-list .main ul {
 	margin:0 0 13px;
 	-webkit-column-count:4;
+	-moz-column-count:4;
 	column-count:4;
 	-webkit-column-gap:28px;
+	-moz-column-gap:28px;
 	column-gap:28px;
 }
 .catalog-list .main ul li {
