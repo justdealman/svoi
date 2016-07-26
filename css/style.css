@@ -487,6 +487,11 @@ nav ul li a {
 	width:662px;
 	height:380px;
 }
+.slider-i .container > div > div> a {
+	display:block;
+	width:662px;
+	height:380px;
+}
 .slider-i .pagination {
 	position:absolute;
 	left:57px;
@@ -2214,7 +2219,7 @@ h1 {
 .content-b .slider-i {
 	margin:-19px 0 18px;
 }
-.content-b .slider-i, .content-b .slider-i .container, .content-b .slider-i .container > div > div {
+.content-b .slider-i, .content-b .slider-i .container, .content-b .slider-i .container > div > div, .content-b .slider-i .container > div > div > a {
 	width:960px;
 	height:274px;
 }
