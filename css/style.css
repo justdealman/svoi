@@ -3108,11 +3108,15 @@ h1 {
 .modal p {
 	margin:0 0 17px;
 }
-.modal p input {
+.modal p input, .modal p textarea {
 	width:100%;
 	font-size:13px;
 	padding:12px 18px 13px;
 	background:#ededed;
+}
+.modal p textarea {
+	margin:0 0 -4px;
+	resize:vertical;
 }
 .modal button {
 	width:100%;
