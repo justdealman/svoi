@@ -114,6 +114,7 @@
 			}).stop().slideDown(200);
 			$('.search-result').hide();
 			$('.search-p .user input[type="text"]').removeClass('found');
+			$('.lk-drop').stop().fadeOut(200);
 		} else {
 			$('.filter-opened').stop().slideUp(200);
 		}
@@ -122,8 +123,9 @@
 		$('.filter-opened').stop().slideUp(200);
 		$('.search-result').stop().slideUp(200);
 		$('.search-p .user input[type="text"]').removeClass('found');
+		$('.lk-drop').stop().fadeOut(200);
 	});
-	$('.filter-opened, .search-p .filter, .search-p .user input[type="text"], .search-result').click('click', function(e) {
+	$('.filter-opened, .search-p .filter, .search-p .user input[type="text"], .search-result, .lk-open, lk-drop').click('click', function(e) {
 		e.stopPropagation();
 	});
 	$('.search-p .user input[type="text"]').on('keyup', function() {
@@ -132,9 +134,44 @@
 			$('.search-result .scroll').jScrollPane();
 			$(this).addClass('found');
 			$('.filter-opened').hide();
+			$('.lk-drop').stop().fadeOut(200);
 		} else {
 			$('.search-result').stop().slideUp(200);
 			$(this).removeClass('found');
 		}
+	});
+	$('.lk-open').on('click', function(e) {
+		e.preventDefault();
+		var t = $('.lk-drop');
+		if ( t.is(':hidden') ) {
+			t.stop().fadeIn(200);
+			$('.filter-opened').stop().slideUp(200);
+			$('.search-result').stop().slideUp(200);
+			$('.search-p .user input[type="text"]').removeClass('found');
+		} else {
+			t.stop().fadeOut(200);
+		}
+	});
+	$('[data-open]').on('click', function(e) {
+		e.preventDefault();
+		if ( !$(this).hasClass('disabled') > 0 ) {
+			$('.filter-opened').stop().slideUp(200);
+			$('.search-result').stop().slideUp(200);
+			$('.search-p .user input[type="text"]').removeClass('found');
+			$('.lk-drop').stop().slideUp(250);
+			var t = $('.modal[data-target="'+$(this).attr('data-open')+'"]');
+			$('.fade').stop(true,true).fadeIn(500);
+			var h = $(window).scrollTop()+($(window).height()-t.outerHeight())/2;
+			if ( h < $(window).scrollTop()+40 ) {
+				h = $(window).scrollTop()+20;
+			}
+			t.css({
+				'top': h+'px'
+			}).stop(true,true).fadeIn(500);
+		}
+	});
+	$('.fade, .modal .close').on('click', function(e) {
+		e.preventDefault();
+		$('.fade, .modal').stop(true,true).fadeOut(500);
 	});
 });

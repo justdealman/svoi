@@ -280,6 +280,7 @@ div.checker,div.radio{position:relative}div.checker input,div.radio input{filter
 }
 header {
 	position:relative;
+	z-index:40;
 	width:960px;
 	height:170px;
 	margin:0 auto;
@@ -347,6 +348,40 @@ header .lk-open a:after {
 header .lk-open a:hover:after {
 	border-bottom-color:transparent;
 }
+header .lk-drop {
+	position:absolute;
+	right:0;
+	top:73px;
+	display:none;
+	width:93px;
+	z-index:5;
+	padding:19px 24px 8px 31px;
+	margin:0;
+	background:#ffffff;
+	border:1px solid #ededed;
+}
+header .lk-drop:before {
+	content:'';
+	position:absolute;
+	left:50%;
+	top:-9px;
+	width:22px;
+	height:9px;
+	margin-left:-11px;
+	background:url('../img/lk-drop-arrow.png') no-repeat center top;
+}
+header .lk-drop li {
+	font-size:13px;
+	line-height:16px;
+	margin:0 0 14px;
+}
+header .lk-drop li a {
+	color:#000000;
+	text-decoration:underline;
+}
+header .lk-drop li a:hover {
+	text-decoration:none;
+}
 header .basket {
 	position:absolute;
 	right:50%;
@@ -382,18 +417,22 @@ header .basket p a:hover {
 	text-decoration:none;
 }
 nav {
+	position:relative;
+	z-index:30;
 	text-align:center;
 	background:#2c2c2c;
 }
-nav ul {
-	margin:0;
+nav > ul {
+	position:relative;
+	width:960px;
+	margin:0 auto;
 }
-nav ul li {
+nav > ul > li {
 	display:inline-block;
 	vertical-align:top;
 	margin:0 -2px 0 -1px;
 }
-nav ul li a {
+nav > ul > li > a {
 	display:block;
 	color:#ffffff;
 	font-size:20px;
@@ -401,6 +440,75 @@ nav ul li a {
     font-family:'PT Sans', sans-serif;
 	text-transform:uppercase;
 	padding:14px 34px 13px;
+}
+nav > ul > li > ul {
+	display:none;
+	position:absolute;
+	left:0;
+	top:50px;
+	width:241px;
+	text-align:left;
+	margin:0;
+	-webkit-box-shadow:5px 5px 15px rgba(0,0,0,0.15);
+	box-shadow:5px 5px 15px rgba(0,0,0,0.15);
+}
+nav > ul > li > ul > li {
+	position:relative;
+	z-index:2;
+}
+nav > ul > li > ul > li > a {
+	display:block;
+	color:#ffffff;
+	font-size:15px;
+	line-height:18px;
+	padding:12px 30px 16px 40px;
+	background:#4e4e4e;
+	border-bottom:1px solid #666666;
+}
+nav > ul > li > ul > li:last-child > a {
+	border-bottom-width:0;
+}
+nav > ul > li > ul > li:hover > a {
+	background:#666666;
+}
+nav > ul > li > ul > li:hover > a:after {
+	content:'';
+	position:absolute;
+	right:-13px;
+	top:0;
+	z-index:5;
+	width:13px;
+	height:100%;
+	background:url('../img/nav-sub-after.png') no-repeat left center;
+	background-size:100% 100%;
+}
+nav > ul > li > ul > li > ul {
+	display:none;
+	position:absolute;
+	left:241px;
+	top:-1px;
+	width:333px;
+	padding:14px 0 18px;
+	margin:0;
+	background:#ef7f1b;
+	-webkit-box-shadow:inset 0 0 10px rgba(0,0,0,0.1), 5px 5px 15px rgba(0,0,0,0.15);
+	box-shadow:inset 0 0 10px rgba(0,0,0,0.1), 5px 5px 15px rgba(0,0,0,0.15);
+}
+nav > ul > li > ul > li:first-child > ul {
+	top:0;
+}
+nav > ul > li > ul > li > ul li a {
+	display:block;
+	color:#ffffff;
+	font-size:13px;
+	line-height:16px;
+	padding:10px 27px 10px 29px;
+}
+nav > ul > li > ul > li > ul li a:hover {
+	text-decoration:underline;
+}
+nav li:hover > ul {
+	display:block;
 }
 .search-p {
 	position:relative;
@@ -2949,4 +3057,96 @@ h1 {
 .jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {
 	float:left;
 	height:100%;
+}
+.fade {
+	display:none;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:1000;
+	width:100%;
+	height:100%;
+	background:url('../img/fade-bg.png') repeat;
+}
+.modal {
+	display:none;
+	position:absolute;
+	left:50%;
+	top:0;
+	z-index:1010;
+	width:322px;
+	text-align:center;
+	padding:42px 53px 25px 55px;
+	margin-left:-215px;
+	background:#ffffff;
+}
+.modal h4 {
+	color:#101010;
+	font-size:20px;
+	line-height:30px;
+	font-weight:normal;
+    font-family:'Autoradiographic', sans-serif;
+	padding:0;
+	margin:0 0 16px;
+}
+.modal h4 img {
+	display:block;
+	margin:34px auto 8px;
+}
+.modal ::-webkit-input-placeholder  {
+	color:#9a9a9a;
+}
+.modal :-moz-placeholder {
+	color:#9a9a9a;
+}
+.modal ::-moz-placeholder {
+	color:#9a9a9a;
+}
+.modal :-ms-input-placeholder {
+	color:#9a9a9a;
+}
+.modal p {
+	margin:0 0 17px;
+}
+.modal p input {
+	width:100%;
+	font-size:13px;
+	padding:12px 18px 13px;
+	background:#ededed;
+}
+.modal button {
+	width:100%;
+	font-size:13px;
+	line-height:16px;
+	letter-spacing:4px;
+	padding:13px 15px 14px;
+	margin:0 0 17px;
+	background:#ef7f1b;
+}
+.modal .close {
+	position:absolute;
+	right:13px;
+	top:14px;
+	display:block;
+	width:33px;
+	height:33px;
+	cursor:pointer;
+	background:url('../img/close-icon.png') no-repeat center center;
+}
+.modal h6 {
+	font-size:13px;
+	line-height:16px;
+	font-weight:normal;
+	padding:0;
+	margin:-10px 0 17px;
+}
+.modal h6 a {
+	color:#000000;
+	text-decoration:underline;
+}
+.modal h6 a:hover {
+	text-decoration:none;
+}
+.modal h4 + button {
+	margin-top:8px;
 }

@@ -34,6 +34,16 @@
 				<p>(Ежедневно с 9.00 до 20.00)</p>
 			</div>
 			<p class="lk-open"><a href="#">Личный кабинет</a></p>
+			<ul class="lk-drop">
+				<li><a href="#">Мой профиль</a></li>
+				<li><a href="#">Мои заказы</a></li>
+				<li><a href="#">Корзина</a></li>
+				<li><a href="#">Выход</a></li>
+			</ul>
+			<!--<ul class="lk-drop">
+				<li><a href="#">Вход</a></li>
+				<li><a href="#">Регистрация</a></li>
+			</ul>-->
 			<div class="basket">
 				<h5>Товаров в корзине</h5>
 				<p><a href="#">1 на 750 руб.</a></p>
@@ -41,7 +51,33 @@
 		</header>
 		<nav>
 			<ul>
-				<li><a href="#">Каталог</a></li>
+				<li>
+					<a href="#">Каталог</a>
+					<ul>
+						<li><a href="#">ЗЧ оригинал</a></li>
+						<li><a href="#">ЗЧ аналоги</a></li>
+						<li>
+							<a href="#">ЗЧ отечественные</a>
+							<ul>
+								<li><a href="#">Амортизаторы, стойки ОЕМ</a></li>
+								<li><a href="#">Бачки ОЕМ</a></li>
+								<li><a href="#">Болты, гайки, шайбы, пробки</a></li>
+								<li><a href="#">Эксцентрики ОЕМ</a></li>
+								<li><a href="#">Вкладыши ОЕМ</a></li>
+								<li><a href="#">Втулки стабилизатора ОЕМ</a></li>
+								<li><a href="#">ГРМ ролики натяжители цепи ОЕМ</a></li>
+								<li><a href="#">ДВС ОЕМ</a></li>
+								<li><a href="#">Замки/ключи ОЕМ</a></li>
+								<li><a href="#">Клапана вентиляции картера ОЕМ</a></li>
+								<li><a href="#">Клапана ГРМ ОЕМ</a></li>
+								<li><a href="#">Клапаны ОЕМ</a></li>
+								<li><a href="#">Колечки форсунок, прокладка рег-ра ХХ ОЕМ</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Масла, смазки</a></li>
+						<li><a href="#">Аксессуары</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Акции</a></li>
 				<li><a href="#">Как сделать заказ</a></li>
 				<li><a href="#">Доставка</a></li>
@@ -233,7 +269,7 @@
 					<p>Цена:</p>
 					<h5>390.00 <em class="rouble-icon">u</em></h5>
 				</div>
-				<button>Купить</button>
+				<button data-open="buy-oneclick">Купить</button>
 			</div>
 		</div>
 		<div class="index-t">
@@ -252,7 +288,7 @@
 						<p>Цена:</p>
 						<h5>341.00 <em class="rouble-icon">u</em></h5>
 					</div>
-					<button>Купить</button>
+					<button data-open="buy-oneclick">Купить</button>
 				</li>
 				<li class="item-e">
 					<h4><a href="#">Универсальная проникающая смазка BG...</a></h4>
@@ -263,7 +299,7 @@
 						<p>Цена:</p>
 						<h5>386.00 <em class="rouble-icon">u</em></h5>
 					</div>
-					<button>Купить</button>
+					<button data-open="buy-oneclick">Купить</button>
 				</li>
 				<li class="item-e">
 					<h4><a href="#">Смазка многофункциональная 397г BG</a></h4>
@@ -274,7 +310,7 @@
 						<p>Цена:</p>
 						<h5>459.69 <em class="rouble-icon">u</em></h5>
 					</div>
-					<button>Купить</button>
+					<button data-open="buy-oneclick">Купить</button>
 				</li>
 				<li class="item-e">
 					<h4><a href="#">Присадка в топливо диз.двигателя BG</a></h4>
@@ -285,7 +321,7 @@
 						<p>Цена:</p>
 						<h5>761.00 <em class="rouble-icon">u</em></h5>
 					</div>
-					<button>Купить</button>
+					<button data-open="buy-oneclick">Купить</button>
 				</li>
 			</ul>
 		</div>
@@ -419,6 +455,27 @@
 				<button>Искать</button>
 			</li>
 		</ul>
+	</div>
+	<div class="fade"></div>
+	<div class="modal" data-target="ask">
+		<span class="close"></span>
+		<h4>Задать вопрос о товаре</h4>
+		<p><input type="text" placeholder="ФИО"></p>
+		<p><input type="text" placeholder="Телефон"></p>
+		<button>Отправить</button>
+	</div>
+	<div class="modal" data-target="buy-oneclick">
+		<span class="close"></span>
+		<h4>Купить в 1 клик</h4>
+		<p><input type="text" placeholder="ФИО"></p>
+		<p><input type="text" placeholder="Телефон"></p>
+		<button>Отправить</button>
+	</div>
+	<div class="modal" data-target="added-to-baket">
+		<span class="close"></span>
+		<h4><img src="./img/basket-added-icon.png" width="50" height="47" alt="">Товар добавлен в корзину</h4>
+		<button>Перейти в корзину</button>
+		<h6><a href="#" class="continue">Продолжить покупки</a></h6>
 	</div>
 	<script src="./js/easing.js"></script>
 	<script src="./js/jscrollpane.js"></script>
