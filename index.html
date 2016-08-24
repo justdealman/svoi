@@ -269,7 +269,7 @@
 					<p>Цена:</p>
 					<h5>390.00 <em class="rouble-icon">u</em></h5>
 				</div>
-				<button data-open="buy-oneclick">Купить</button>
+				<button data-open="out-of-stock">Купить</button>
 			</div>
 		</div>
 		<div class="index-t">
@@ -483,6 +483,16 @@
 		<p><input type="text" placeholder="ФИО"></p>
 		<p><input type="text" placeholder="E-mail"></p>
 		<p><textarea cols="60" rows="4" placeholder="Сообщение"></textarea></p>
+		<button>Отправить</button>
+	</div>
+	<div class="modal" data-target="out-of-stock">
+		<span class="close"></span>
+		<h4>Заказ товара на склад</h4>
+		<p><input type="text" placeholder="Имя"></p>
+		<p><input type="text" placeholder="Телефон"></p>
+		<p><input type="text" value="Моторное масло Castrol Magnarec 10w40 A3/B4, 1л." disabled></p>
+		<p><input type="text" value="Артикул: 395367" disabled></p>
+		<p><input type="number" placeholder="Количество"></p>
 		<button>Отправить</button>
 	</div>
 	<script src="./js/easing.js"></script>
